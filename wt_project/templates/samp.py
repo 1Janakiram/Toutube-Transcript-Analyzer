@@ -81,7 +81,7 @@ def get_videos(text):
     querystring = {"query":text,"lang":"en","order_by":"this_month","country":"us"}
 
     headers = {
-        "x-rapidapi-key": "d344502611msh4b4189e89bf1ee4p146035jsnf7747e08f8b6",
+        "x-rapidapi-key": " ",
         "x-rapidapi-host": "youtube-v2.p.rapidapi.com"
     }
     vid_id=[]
@@ -99,7 +99,7 @@ def get_transcript(id):
     url = "https://youtube-v2.p.rapidapi.com/video/subtitles"
 
     headers = {
-        "x-rapidapi-key": "d344502611msh4b4189e89bf1ee4p146035jsnf7747e08f8b6",
+        "x-rapidapi-key": " ",
         "x-rapidapi-host": "youtube-v2.p.rapidapi.com"
     }
 
@@ -113,13 +113,13 @@ def get_video_title(id):
     url = "https://youtube-v2.p.rapidapi.com/video/details"
 
     headers = {
-        "x-rapidapi-key": "d344502611msh4b4189e89bf1ee4p146035jsnf7747e08f8b6",
+        "x-rapidapi-key": " ",
         "x-rapidapi-host": "youtube-v2.p.rapidapi.com"
     }
     querystring = {"video_id":id}
 
     headers = {
-        "x-rapidapi-key": "d344502611msh4b4189e89bf1ee4p146035jsnf7747e08f8b6",
+        "x-rapidapi-key": " ",
         "x-rapidapi-host": "youtube-v2.p.rapidapi.com"
     }
 
