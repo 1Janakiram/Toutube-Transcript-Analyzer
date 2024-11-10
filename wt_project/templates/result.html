@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>RESULT</title>
+        <style>
+          body{
+            margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 10px;
+  margin-left: 500px;
+          }
+
+        </style>
+
+    </head>
+    <body>
+        {% block main %}
+        <div id="result-container">
+        </div>
+    <button id="next-button">Next</button>
+
+
+        <table>
+
+            <tbody>
+              {{vid_name}}
+              <br>
+              <br>
+
+                {% for value in subtitle.items() %}
+                <tr>
+                  <td>
+
+                    <a href= {{ key }} target="_blank"> {{ key }}: {{ value }}</a>
+                  </td>
+
+
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        {% endblock %}
+
+    </body>
+</html>

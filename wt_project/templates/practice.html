@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Example</title>
+    <style>
+        /* General Accordion Styles */
+        .accordion {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            margin: 0;
+            padding: 0;
+        }
+
+        .accordion-button {
+            background-color: #f7f7f7;
+            color: #333;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #e2e2e2;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background-color: #fff;
+            animation: fadein 0.3s;
+        }
+
+        .accordion-content p {
+            margin: 0;
+        }
+
+        /* Animation for accordion content */
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Open Accordion Styles */
+        .accordion-item.active .accordion-button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button">
+                    Section 1
+                </button>
+            </h2>
+            <div class="accordion-content">
+                <p>This is the content for section 1.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button">
+                    Section 2
+                </button>
+            </h2>
+            <div class="accordion-content">
+                <p>This is the content for section 2.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button">
+                    Section 3
+                </button>
+            </h2>
+            <div class="accordion-content">
+                <p>This is the content for section 3.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const accordionItem = this.parentElement.parentElement;
+
+                accordionItem.classList.toggle('active');
+
+                const content = accordionItem.querySelector('.accordion-content');
+                if (accordionItem.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
